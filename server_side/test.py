@@ -15,7 +15,7 @@ import os
 tf.disable_v2_behavior()
 
 
-UUID_OVERRIDE = "4b6cd0a4-734b-4445-8208-71f324634f1e"
+UUID_OVERRIDE = "42531f6f-f035-41fd-973b-14ea845c33d4"
 
 mp_drawing = mp.solutions.drawing_utils
 mp_drawing_styles = mp.solutions.drawing_styles
