@@ -14,6 +14,9 @@ import pickle
 import os
 tf.disable_v2_behavior()
 
+
+UUID_OVERRIDE = "af521dcd-eff4-427e-ba77-b84b3722d50b"
+
 mp_drawing = mp.solutions.drawing_utils
 mp_drawing_styles = mp.solutions.drawing_styles
 mp_face_mesh = mp.solutions.face_mesh
@@ -68,8 +71,10 @@ async def sockanal(websocket): # Analyzes websocket data
     global ipkeys
     global roomcrowds
 
-    async for fmessage in websocket:       
+    async for fmessage in websocket:               
         userid = fmessage[:36] # gets header from websocket data
+        if UUID_OVERRIDE != "no":
+            userid = UUID_OVERRIDE
         message = fmessage[36:]
         if message[:100] == "data:,":
             await websocket.send("owo")
